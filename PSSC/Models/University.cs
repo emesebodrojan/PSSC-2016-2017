@@ -8,11 +8,11 @@ namespace Models
 {
     class University
     {
-        private int University_ID;
-        private String University_Name;
-        private DateTime Founding_Year;
-        private bool International_Program;
-        private List<Department> University_Dep;
+        int University_ID { get; set; }
+        String University_Name { get; set; }
+        DateTime Founding_Year { get; set; }
+        bool International_Program { get; set; }
+        List<Department> University_Dep { get; set; }
 
         public University(int University_ID, string University_Name,DateTime Founding_Year,bool International_Program,List<Department> University_Dep)
             {

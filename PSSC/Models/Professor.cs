@@ -8,11 +8,11 @@ namespace Models
 {
     public class Professor
     {
-        protected int Professor_ID;
-        protected string Professor_Name;
-        protected string Professor_Speciality;
-        protected int Experience_Years;
-        protected List<Student> Professor_Students;
+        int Professor_ID { get; set; }
+        string Professor_Name { get; set; }
+        string Professor_Speciality { get; set; }
+        int Experience_Years { get; set; }
+        List<Student> Professor_Students { get; set; }
 
         public Professor(int Professor_ID,string Professor_Name, string Professor_Speciality,int Experience_Years,List<Student> Professor_Students)
         {

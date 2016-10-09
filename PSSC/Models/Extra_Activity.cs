@@ -8,10 +8,10 @@ namespace Models
 {
     public class Extra_Activity
     {
-        protected int ExtraActivity_ID;
-        protected string ExtraActivity_Name;
-        protected Program Schedule;
-        protected List<Student> Activity_Students;
+        int ExtraActivity_ID { get; set; }
+        string ExtraActivity_Name { get; set; }
+        Program Schedule { get; set; }
+        List<Student> Activity_Students { get; set; }
         
         public Extra_Activity(int ExtraActivity_ID,string ExtraActivity_Name,Program Schedule, List<Student> Activity_Students )
         {

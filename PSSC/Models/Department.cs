@@ -5,11 +5,11 @@ namespace Models
 {
     public class Department
     {
-        protected int Department_ID;
-        protected string Department_Name;
-        protected string Department_Major;
-        protected List<Professor> Department_Professors;
-        protected List<Student> Department_Students;
+        int Department_ID { get; set; }
+        string Department_Name { get; set; }
+        string Department_Major { get; set; }
+        List<Professor> Department_Professors { get; set; }
+        List<Student> Department_Students { get; set; }
 
         public Department(int Department_ID, string Department_Name, string Department_Major,List<Professor> Department_Professors, List<Student> Department_Students)
         {
