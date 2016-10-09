@@ -11,7 +11,13 @@ namespace Models
         public List<Professor> Department_Professors { get; set; }
         public List<Student> Department_Students { get; set; }
 
-        public Department(int Department_ID, string Department_Name, string Department_Major,List<Professor> Department_Professors, List<Student> Department_Students)
+        public Department()
+        {
+            this.Department_Professors = new List<Professor> { null };
+            this.Department_Students = new List<Student> { null };
+        }
+
+        public Department(int Department_ID, string Department_Name, string Department_Major,List<Professor> Department_Professors, List<Student> Department_Students) : this()
         {
             this.Department_ID = Department_ID;
             this.Department_Name = Department_Name;

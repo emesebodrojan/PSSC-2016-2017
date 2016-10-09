@@ -14,7 +14,12 @@ namespace Models
         public int Experience_Years { get; set; }
         public List<Student> Professor_Students { get; set; }
 
-        public Professor(int Professor_ID,string Professor_Name, string Professor_Speciality,int Experience_Years,List<Student> Professor_Students)
+        public Professor()
+        {
+            this.Professor_Students = new List<Student> { null };
+        }
+
+        public Professor(int Professor_ID,string Professor_Name, string Professor_Speciality,int Experience_Years,List<Student> Professor_Students) :this()
         {
             this.Professor_ID = Professor_ID;
             this.Professor_Name = Professor_Name;

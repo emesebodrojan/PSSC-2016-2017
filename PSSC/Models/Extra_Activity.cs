@@ -12,8 +12,13 @@ namespace Models
         public string ExtraActivity_Name { get; set; }
         public Program Schedule { get; set; }
         public List<Student> Activity_Students { get; set; }
+
+        public Extra_Activity()
+        {
+            this.Activity_Students = new List<Student> { null };
+        }
         
-        public Extra_Activity(int ExtraActivity_ID,string ExtraActivity_Name,Program Schedule, List<Student> Activity_Students )
+        public Extra_Activity(int ExtraActivity_ID,string ExtraActivity_Name,Program Schedule, List<Student> Activity_Students ) :this()
         {
             this.ExtraActivity_ID = ExtraActivity_ID;
             this.ExtraActivity_Name = ExtraActivity_Name;

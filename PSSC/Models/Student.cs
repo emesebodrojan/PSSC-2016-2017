@@ -16,6 +16,11 @@ namespace Models
         public bool Scholarship { get; set; }
         public string Nationality { get; set; }
 
+        public Student()
+        {
+            
+        }
+
         public Student(int Student_ID, string Student_Name, DateTime BirthDate, Student_Type Type, bool Scholarship, string Nationality,int Department_ID, string Department_Name, string Department_Major, List<Professor> Department_Professors, List<Student> Department_Students) : 
             base(Department_ID, Department_Name, Department_Major, Department_Professors, Department_Students)
         {

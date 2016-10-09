@@ -14,13 +14,18 @@ namespace Models
         public bool International_Program { get; set; }
         public List<Department> University_Dep { get; set; }
 
-        public University(int University_ID, string University_Name,DateTime Founding_Year,bool International_Program,List<Department> University_Dep)
-            {
+        public University()
+        {
+            this.University_Dep = new List<Department> { null };
+        }
+
+        public University(int University_ID, string University_Name,DateTime Founding_Year,bool International_Program,List<Department> University_Dep) :this()
+        {
             this.University_ID = University_ID;
             this.University_Name = University_Name;
             this.Founding_Year = Founding_Year;
             this.International_Program = International_Program;
             this.University_Dep = University_Dep;
-            }
+        }
     }
 }
