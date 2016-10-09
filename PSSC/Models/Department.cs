@@ -13,8 +13,8 @@ namespace Models
 
         public Department()
         {
-            this.Department_Professors = new List<Professor> { null };
-            this.Department_Students = new List<Student> { null };
+            this.Department_Professors = new List<Professor> () ;
+            this.Department_Students = new List<Student> () ;
         }
 
         public Department(int Department_ID, string Department_Name, string Department_Major,List<Professor> Department_Professors, List<Student> Department_Students) : this()

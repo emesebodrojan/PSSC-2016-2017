@@ -16,7 +16,7 @@ namespace Models
 
         public University()
         {
-            this.University_Dep = new List<Department> { null };
+            University_Dep = new List<Department>();
         }
 
         public University(int University_ID, string University_Name,DateTime Founding_Year,bool International_Program,List<Department> University_Dep) :this()

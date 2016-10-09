@@ -15,7 +15,7 @@ namespace Models
 
         public Extra_Activity()
         {
-            this.Activity_Students = new List<Student> { null };
+            this.Activity_Students = new List<Student> ();
         }
         
         public Extra_Activity(int ExtraActivity_ID,string ExtraActivity_Name,Program Schedule, List<Student> Activity_Students ) :this()
@@ -29,9 +29,9 @@ namespace Models
 
     public class Program
     {
-        protected string Day;
-        protected int Start_Hour;
-        protected int End_Hour;
+        public string Day { get; set; }
+        public int Start_Hour { get; set; }
+        public int End_Hour { get; set; }
 
         public Program(string Day,int Start_Hour, int End_Hour)
         {
