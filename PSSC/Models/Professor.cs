@@ -16,7 +16,7 @@ namespace Models
 
         public Professor()
         {
-            this.Professor_Students = new List<Student> () ;
+            this.Professor_Students = new List<Student> { null };
         }
 
         public Professor(int Professor_ID,string Professor_Name, string Professor_Speciality,int Experience_Years,List<Student> Professor_Students) :this()

@@ -17,7 +17,7 @@ namespace Models
 
         public Course()
         {
-            this.Course_Students = new List<Student> () ;
+            this.Course_Students = new List<Student> { null };
         }
 
         public Course(int Course_ID,string Course_Name,string Course_Description,string Course_Language,int Total_Hours, List<Student> Course_Students, int Department_ID, string Department_Name, string Department_Major, List<Professor> Department_Professors, List<Student> Department_Students) : 
