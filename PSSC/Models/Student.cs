@@ -6,161 +6,25 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Student : iStudent
+    public enum Student_Type { Undergraduate, Graduate, Master, Doctorand}
+    public class Student:Department
     {
-        private int Student_ID;
-        private String Stud_Name;
-        private DateTime BirthDate;
-        private DateTime Enrolment_Date; 
-        private int Department_ID;
-        private String Dep_Name;
-        private String Admin;
-        private int University_ID;
-        private String Univ_Name;
-        private DateTime startDate;
-        private String dean;
+        protected int Student_ID;
+        protected string Student_Name;
+        protected DateTime BirthDate;
+        protected Student_Type Type;
+        protected bool Scholarship;
+        protected string Nationality;
 
-        DateTime iStudent.BirthDate
+        public Student(int Student_ID, string Student_Name, DateTime BirthDate, Student_Type Type, bool Scholarship, string Nationality,int Department_ID, string Department_Name, string Department_Major, List<Professor> Department_Professors, List<Student> Department_Students) : 
+            base(Department_ID, Department_Name, Department_Major, Department_Professors, Department_Students)
         {
-            get
-            {
-                return BirthDate;
-            }
-
-            set
-            {
-                BirthDate = value;
-            }
-        }
-
-        DateTime iStudent.Enrolment_Date
-        {
-            get
-            {
-                return Enrolment_Date;
-            }
-
-            set
-            {
-                Enrolment_Date = value;
-            }
-        }
-
-        int iStudent.Student_ID
-        {
-            get
-            {
-                return Student_ID;
-            }
-
-            set
-            {
-                Student_ID = value;
-            }
-        }
-
-        string iStudent.Stud_Name
-        {
-            get
-            {
-                return Stud_Name;
-            }
-
-            set
-            {
-                Stud_Name = value;
-            }
-        }
-
-        string iDepartment.Admin
-        {
-            get
-            {
-                return Admin;
-            }
-
-            set
-            {
-                Admin = value;
-            }
-        }
-
-        string iUniversity.Dean
-        {
-            get
-            {
-                return dean;
-            }
-
-            set
-            {
-                dean = value;
-            }
-        }
-
-        int iDepartment.Department_ID
-        {
-            get
-            {
-                return Department_ID;
-            }
-
-            set
-            {
-                Department_ID = value;
-            }
-        }
-
-        string iDepartment.Dep_Name
-        {
-            get
-            {
-                return Dep_Name;
-            }
-
-            set
-            {
-                Dep_Name = value;
-            }
-        }
-
-        string iUniversity.Name
-        {
-            get
-            {
-                return Univ_Name;
-            }
-
-            set
-            {
-                Univ_Name = value;
-            }
-        }
-
-        DateTime iUniversity.StartDate
-        {
-            get
-            {
-                return startDate;
-            }
-
-            set
-            {
-                startDate = value;
-            }
-        }
-
-        int iUniversity.University_ID
-        {
-            get
-            {
-                return University_ID;
-            }
-
-            set
-            {
-                University_ID = value;
-            }
+            this.Student_ID = Student_ID;
+            this.Student_Name = Student_Name;
+            this.BirthDate = BirthDate;
+            this.Type = Type;
+            this.Scholarship = Scholarship;
+            this.Nationality = Nationality;
         }
     }
 }

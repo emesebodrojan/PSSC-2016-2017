@@ -1,111 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Models
 {
-    class Department : iDepartment
+    public class Department
     {
-        private int Department_ID;
-        private String Dep_Name;
-        private String Admin;
-        private int University_ID;
-        private String Univ_Name;
-        private DateTime startDate;
-        private String dean;
+        protected int Department_ID;
+        protected string Department_Name;
+        protected string Department_Major;
+        protected List<Professor> Department_Professors;
+        protected List<Student> Department_Students;
 
-        string iDepartment.Admin
+        public Department(int Department_ID, string Department_Name, string Department_Major,List<Professor> Department_Professors, List<Student> Department_Students)
         {
-            get
-            {
-                return Admin;
-            }
-
-            set
-            {
-                Admin = value;
-            }
+            this.Department_ID = Department_ID;
+            this.Department_Name = Department_Name;
+            this.Department_Major = Department_Major;
+            this.Department_Professors = Department_Professors;
+            this.Department_Students = Department_Students;
+        }
+            
+        public int department_ID
+        {
+            set { this.Department_ID = value; }
+            get { return this.Department_ID; }
         }
 
-        string iUniversity.Dean
+        public string department_Name
         {
-            get
-            {
-                return dean;
-            }
-
-            set
-            {
-                dean = value;
-            }
+            set { this.Department_Name = value; }
+            get { return this.Department_Name; }
         }
 
-        int iDepartment.Department_ID
+        public string major
         {
-            get
-            {
-                return Department_ID;
-            }
-
-            set
-            {
-                Department_ID = value;
-            }
+            set { this.Department_Name = value; }
+            get { return this.Department_Major; }
         }
-
-        string iDepartment.Dep_Name
+        public List<Professor> proffesors
         {
-            get
-            {
-                return Dep_Name;
-            }
-
-            set
-            {
-                Dep_Name = value;
-            }
+            set { this.Department_Professors = value; }
+            get { return this.Department_Professors; }
         }
-
-        string iUniversity.Name
+        public List<Student> students
         {
-            get
-            {
-                return Univ_Name;
-            }
-
-            set
-            {
-                Univ_Name = value;
-            }
+            set { this.Department_Students = value; }
+            get { return this.Department_Students; }
         }
-
-        DateTime iUniversity.StartDate
-        {
-            get
-            {
-                return startDate;
-            }
-
-            set
-            {
-                startDate = value;
-            }
-        }
-
-        int iUniversity.University_ID
-        {
-            get
-            {
-                return University_ID;
-            }
-
-            set
-            {
-                University_ID = value;
-            }
-        }
-
     }
 }

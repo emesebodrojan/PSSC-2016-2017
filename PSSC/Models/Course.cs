@@ -6,147 +6,24 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    
-    class Course : iCourse
+    public class Course : Department
     {
-        private int Course_ID;
-        private String C_Name;
-        private int Student_nr;
-        private String Dep_Name;
-        private String Admin;
-        private int University_ID;
-        private String Univ_Name;
-        private DateTime startDate;
-        private String dean;
+        protected int Course_ID;
+        protected string Course_Name;
+        protected string Course_Description;
+        protected string Course_Language;
+        protected int Total_Hours;
+        protected List<Student> Course_Students;
 
-        int iCourse.Course_ID
+        public Course(int Course_ID,string Course_Name,string Course_Description,string Course_Language,int Total_Hours, List<Student> Course_Students, int Department_ID, string Department_Name, string Department_Major, List<Professor> Department_Professors, List<Student> Department_Students) : 
+            base(Department_ID, Department_Name, Department_Major, Department_Professors, Department_Students)
         {
-            get
-            {
-                return Course_ID;
-            }
-
-            set
-            {
-                Course_ID = value;
-            }
-        }
-
-        string iCourse.C_Name
-        {
-            get
-            {
-                return C_Name;
-            }
-
-            set
-            {
-                C_Name = value;
-            }
-        }
-
-        int iCourse.Student_nr
-        {
-            get
-            {
-                return Student_nr;
-            }
-
-            set
-            {
-                Student_nr = value;
-            }
-        }
-
-        string iDepartment.Admin
-        {
-            get
-            {
-                return Admin;
-            }
-
-            set
-            {
-                Admin = value;
-            }
-        }
-
-        string iUniversity.Dean
-        {
-            get
-            {
-                return dean;
-            }
-
-            set
-            {
-                dean = value;
-            }
-        }
-
-        int iDepartment.Department_ID
-        {
-            get
-            {
-                return Department_ID;
-            }
-
-            set
-            {
-                Department_ID = value;
-            }
-        }
-
-        string iDepartment.Dep_Name
-        {
-            get
-            {
-                return Dep_Name;
-            }
-
-            set
-            {
-                Dep_Name = value;
-            }
-        }
-
-        string iUniversity.Name
-        {
-            get
-            {
-                return Univ_Name;
-            }
-
-            set
-            {
-                Univ_Name = value;
-            }
-        }
-
-        DateTime iUniversity.StartDate
-        {
-            get
-            {
-                return startDate;
-            }
-
-            set
-            {
-                startDate = value;
-            }
-        }
-
-        int iUniversity.University_ID
-        {
-            get
-            {
-                return University_ID;
-            }
-
-            set
-            {
-                University_ID = value;
-            }
+            this.Course_ID = Course_ID;
+            this.Course_Name = Course_Name;
+            this.Course_Description = Course_Description;
+            this.Course_Language = Course_Language;
+            this.Total_Hours = Total_Hours;
+            this.Course_Students = Course_Students;
         }
     }
 }

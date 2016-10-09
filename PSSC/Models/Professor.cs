@@ -6,147 +6,21 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Professor : iProfessor
+    public class Professor
     {
-        private int Professor_ID;
-        private String Prof_Name;
-        private DateTime start_Time;
-        private int Department_ID;
-        private String Dep_Name;
-        private String Admin;
-        private int University_ID;
-        private String Univ_Name;
-        private DateTime startDate;
-        private String dean;
+        protected int Professor_ID;
+        protected string Professor_Name;
+        protected string Professor_Speciality;
+        protected int Experience_Years;
+        protected List<Student> Professor_Students;
 
-        string iDepartment.Admin
+        public Professor(int Professor_ID,string Professor_Name, string Professor_Speciality,int Experience_Years,List<Student> Professor_Students)
         {
-            get
-            {
-                return Admin;
-            }
-
-            set
-            {
-                Admin = value;
-            }
-        }
-
-        string iUniversity.Dean
-        {
-            get
-            {
-                return dean;
-            }
-
-            set
-            {
-                dean = value;
-            }
-        }
-
-        int iDepartment.Department_ID
-        {
-            get
-            {
-                return Department_ID;
-            }
-
-            set
-            {
-                Department_ID = value;
-            }
-        }
-
-        string iDepartment.Dep_Name
-        {
-            get
-            {
-                return Dep_Name;
-            }
-
-            set
-            {
-                Dep_Name = value;
-            }
-        }
-
-        string iUniversity.Name
-        {
-            get
-            {
-                return Univ_Name;
-            }
-
-            set
-            {
-                Univ_Name = value;
-            }
-        }
-
-        int iProfessor.Professor_ID
-        {
-            get
-            {
-                return Professor_ID;
-            }
-
-            set
-            {
-                Professor_ID = value;
-            }
-        }
-
-        string iProfessor.Prof_Name
-        {
-            get
-            {
-                return Prof_Name;
-            }
-
-            set
-            {
-                Prof_Name = value;
-            }
-        }
-
-        DateTime iUniversity.StartDate
-        {
-            get
-            {
-                return startDate;
-            }
-
-            set
-            {
-                startDate = value;
-            }
-        }
-
-        DateTime iProfessor.start_Time
-        {
-            get
-            {
-                return start_Time;
-            }
-
-            set
-            {
-                start_Time = value;
-            }
-        }
-        
-        int iUniversity.University_ID
-        {
-            get
-            {
-                return University_ID;
-            }
-
-            set
-            {
-                University_ID = value;
-            }
+            this.Professor_ID = Professor_ID;
+            this.Professor_Name = Professor_Name;
+            this.Professor_Speciality = Professor_Speciality;
+            this.Experience_Years = Experience_Years;
+            this.Professor_Students = Professor_Students;
         }
     }
 }
