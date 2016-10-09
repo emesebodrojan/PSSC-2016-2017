@@ -9,12 +9,12 @@ namespace Models
     public enum Student_Type { Undergraduate, Graduate, Master, Doctorand}
     public class Student:Department
     {
-        int Student_ID { get; set; }
-        string Student_Name { get; set; }
-        DateTime BirthDate { get; set; }
-        Student_Type Type { get; set; }
-        bool Scholarship { get; set; }
-        string Nationality { get; set; }
+        public int Student_ID { get; set; }
+        public string Student_Name { get; set; }
+        public DateTime BirthDate { get; set; }
+        public Student_Type Type { get; set; }
+        public bool Scholarship { get; set; }
+        public string Nationality { get; set; }
 
         public Student(int Student_ID, string Student_Name, DateTime BirthDate, Student_Type Type, bool Scholarship, string Nationality,int Department_ID, string Department_Name, string Department_Major, List<Professor> Department_Professors, List<Student> Department_Students) : 
             base(Department_ID, Department_Name, Department_Major, Department_Professors, Department_Students)
