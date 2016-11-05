@@ -15,15 +15,22 @@ namespace Models.Common
         public Models.Subject.SubjectInformation SubjectInfo { get; internal set; }
 
         public Dictionary<Common.Student, Models.Subject.SubjectSituation> SignedUpStudentsGrades { get; set; }
-
-        public Subject(PlainText name,Dictionary<Common.Student, Models.Subject.SubjectSituation> signedUpStudentsGrades, Models.Subject.SubjectInformation subjectInfo)
-            :base(name)
+        public Subject(PlainText name):base(name)
         {
             SubjectName = name;
+        }
+        public Subject(PlainText name,Dictionary<Common.Student, Models.Subject.SubjectSituation> signedUpStudentsGrades, Models.Subject.SubjectInformation subjectInfo)
+            :this(name)
+        {
             SignedUpStudentsGrades = signedUpStudentsGrades;
             SubjectInfo = subjectInfo;
         }
         
+        public Subject(Models.Subject.SubjectInformation sbjInfo):this()
+        {
+            this.SubjectInfo = sbjInfo;
+        }
+
         public void SignUpStudent(Common.Student student)
         {
             SignedUpStudentsGrades.Add(student, new Models.Subject.SubjectSituation());

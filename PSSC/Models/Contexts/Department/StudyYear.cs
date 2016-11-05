@@ -1,5 +1,4 @@
 ﻿using Models.Generics;
-using Models.GenericEntities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -47,21 +46,6 @@ namespace Models.Deanship
 
             return _definedSubjects.Find(d => d.SubjectInfo.Name == subjectName).GetAverageForStudent(regNumber);
         }
-
-        public void PublishGradeReports(IReportPublisher publisher)
-        {
-
-        }
-
-
-        public Situation GetStudSituation(PlainText subject, RegistrationNumber regNr)
-        {
-            return _definedSubjects.Find(d => d.Name == subject).GetStudentSituation(regNr);
-        }
-
-
-
-
-        public PlainText name { get; set; }
+        
     }
 }
