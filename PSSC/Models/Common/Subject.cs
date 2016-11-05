@@ -11,30 +11,19 @@ namespace Models.Common
     //Entity
     public class Subject : Entity<PlainText>
     {
-        public Generics.PlainText Name { get; set; }
-
+        public PlainText SubjectName { get; set; }
         public Models.Subject.SubjectInformation SubjectInfo { get; internal set; }
 
         public Dictionary<Common.Student, Models.Subject.SubjectSituation> SignedUpStudentsGrades { get; set; }
 
-        public Subject() :base(Name)
-        {
-            SignedUpStudentsGrades = new Dictionary<Student, Models.Subject.SubjectSituation>();
-        }
-
         public Subject(PlainText name,Dictionary<Common.Student, Models.Subject.SubjectSituation> signedUpStudentsGrades, Models.Subject.SubjectInformation subjectInfo)
-            :base(Name)
+            :base(name)
         {
-            Name = name;
+            SubjectName = name;
             SignedUpStudentsGrades = signedUpStudentsGrades;
             SubjectInfo = subjectInfo;
         }
-
-        public Subject(Models.Subject.SubjectInformation subjectInfo) : this()
-        {
-            SubjectInfo = subjectInfo;
-        }
-
+        
         public void SignUpStudent(Common.Student student)
         {
             SignedUpStudentsGrades.Add(student, new Models.Subject.SubjectSituation());
