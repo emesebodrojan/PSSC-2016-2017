@@ -1,4 +1,7 @@
-﻿namespace Models.Generics
+﻿using System;
+using System.Diagnostics.Contracts;
+
+namespace Models.Generics
 {
     public class Proportion
     {
@@ -8,6 +11,9 @@
 
         public Proportion(int numerator, int denominator)
         {
+            Contract.Requires<ArgumentException>(denominator > 0, "Numitorul nu poate fi zero");
+            Contract.Requires<ArgumentException>(numerator < denominator, "Fractia nu poate fi subunitara");
+
             _numerator = numerator;
             _denominator = denominator;
         }

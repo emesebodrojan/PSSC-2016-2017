@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace Models.Generics
 
         public PlainText(string text)
         {
+            Contract.Requires<ArgumentException>(text != null, "Lipsa text!");
+
             _text = text;
         }
     }

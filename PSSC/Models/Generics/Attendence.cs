@@ -15,5 +15,10 @@ namespace Models.Generics
         {
             _count = count;
         }
+
+        public void addAttendance()
+        {
+            _count = _count + 1;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace Models.Generics
 
         public RegistrationNumber(string number)
         {
+            Contract.Requires<ArgumentNullException>(number != null, "Numarul de inregistarare nu poate fi null");
+
             _number = number;
         }
     }

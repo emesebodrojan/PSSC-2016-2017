@@ -16,5 +16,10 @@
         {
             _credits = credits;
         }
+
+        public void addCredit(int CreditValue)
+        {
+            _credits = _credits + CreditValue;
+        }
     }
 }
