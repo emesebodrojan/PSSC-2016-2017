@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Models.Student
 {
-    //Aggregate Root
+
     public class GradeReport
     {
         private ReadOnlyCollection<KeyValuePair<SubjectInformation, SubjectSituation>> _gradeReport;

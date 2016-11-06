@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Models.Common
 {
-    //Entity
+    //A subject has a name, information about who is teaching, number of credits,activity proportion and exam type.
+    //Also a dictionary where a student has the situation for the current subject(attendence number, activity or exam grade)
+    //
     public class Subject : Entity<PlainText>
     {
         public PlainText SubjectName { get; set; }
         public Models.Subject.SubjectInformation SubjectInfo { get; internal set; }
-
         public Dictionary<Common.Student, Models.Subject.SubjectSituation> SignedUpStudentsGrades { get; set; }
         public Subject(PlainText name):base(name)
         {
@@ -31,25 +32,5 @@ namespace Models.Common
             this.SubjectInfo = sbjInfo;
         }
 
-        public void SignUpStudent(Common.Student student)
-        {
-            SignedUpStudentsGrades.Add(student, new Models.Subject.SubjectSituation());
-        }
-
-        public Grade GetAverageForStudent(RegistrationNumber regNumber)
-        {
-            Models.Subject.SubjectSituation situation = SignedUpStudentsGrades.First(d => d.Key.RegNumber == regNumber).Value;
-
-            decimal activityGrade = situation.ActivityGrade.Value;
-            decimal examAverage = situation.GetExamAverage(SubjectInfo.Evaluation);
-            decimal proportion = SubjectInfo.ActivityProportion.Fraction;
-
-            return new Grade(activityGrade * proportion + (1 - proportion) * examAverage);
-        }
-
-        public Models.Subject.SubjectSituation GetSituationForStudent(RegistrationNumber regNumber)
-        {
-            return SignedUpStudentsGrades.First(d => d.Key.RegNumber == regNumber).Value;
-        }
     }
 }

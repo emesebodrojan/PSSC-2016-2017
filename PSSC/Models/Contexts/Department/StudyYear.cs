@@ -7,9 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics.Contracts;
 
-namespace Models.Deanship
+namespace Models.Department
 {
-    //Aggregate Root
     public class StudyYear
     {
         private List<Common.Subject> _definedSubjects { get; set; }
